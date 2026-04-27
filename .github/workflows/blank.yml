@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: fallo intencionado
-        run: exit 1
+      
       - name: Mostrar mensaje
         run: echo "hola, este es mi primer mensaje"
-        
+      - name: fallo intencionado
+        run: exit 1
       
