@@ -1,0 +1,14 @@
+name: Mi primer github action
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+   saludo:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Mostrar mensaje
+        run: echo "hola, este es mi primer mensaje"
