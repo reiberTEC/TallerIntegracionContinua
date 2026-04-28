@@ -23,7 +23,7 @@ jobs:
 
       - name: verificar si app.js existe
         run: |
-          if [ ! -f "$GITHUB_WORKSPACE/CD_CI_MiPrimerAPI/app.js" ]; then
+          if [ ! -f "$GITHUB_WORKSPACE/app.js" ]; then
             echo "No se encontro app.js en la carpeta correcta."
             exit 1
           fi
