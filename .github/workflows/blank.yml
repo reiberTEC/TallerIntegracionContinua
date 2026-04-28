@@ -18,7 +18,6 @@ jobs:
           node-version: '20'
 
       - name: construir app con node
-        working-directory: ./CD_CI_MiPrimerAPI
         run: npm install
 
       - name: verificar si app.js existe
