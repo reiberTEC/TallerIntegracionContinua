@@ -1,4 +1,4 @@
-name: Mi primer github action
+name: pipeline 
 
 # Controls when the workflow will run
 on:
@@ -6,13 +6,18 @@ on:
     branches: [ "main" ]
 
 jobs:
-   saludo:
+   build:
     runs-on: ubuntu-latest
     
     steps:
       
-      - name: Mostrar mensaje
-        run: echo "hola, este es mi primer mensaje"
-      - name: fallo intencionado
-        run: exit 1
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+      - name: usar NODE JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: contruir app con node
+        run: npm install
       
