@@ -13,7 +13,7 @@ jobs:
       
       - name: Checkout del codigo
         uses: actions/checkout@v4
-        
+
       - name: usar NODE JS
         uses: actions/setup-node@v4
         with:
@@ -21,10 +21,12 @@ jobs:
 
       - name: contruir app con node
         run: npm install
+
       - name: verificar si app.js existe
         run: |
-          if[! -f "$GITHUB_WORKSPACE/app.js" ]; then
-            echo "No se encontro app.js en la raiz "
+          if[ ! -f "$GITHUB_WORKSPACE/app.js" ]; then
+            echo "No se encontro app.js en la raiz. "
             exit 1
+            
           fi
           echo "se encontro app.js. Continuando con el workflow" 
