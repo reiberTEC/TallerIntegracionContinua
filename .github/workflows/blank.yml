@@ -1,16 +1,14 @@
 name: pipeline 
 
-# Controls when the workflow will run
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-   build:
+  build:
     runs-on: ubuntu-latest
     
     steps:
-      
       - name: Checkout del codigo
         uses: actions/checkout@v4
 
@@ -19,14 +17,14 @@ jobs:
         with:
           node-version: '20'
 
-      - name: contruir app con node
+      - name: construir app con node
+        working-directory: ./CD_CI_MiPrimerAPI
         run: npm install
 
       - name: verificar si app.js existe
         run: |
-          if[ ! -f "$GITHUB_WORKSPACE/app.js" ]; then
-            echo "No se encontro app.js en la raiz. "
+          if [ ! -f "$GITHUB_WORKSPACE/CD_CI_MiPrimerAPI/app.js" ]; then
+            echo "No se encontro app.js en la carpeta correcta."
             exit 1
-            
           fi
-          echo "se encontro app.js. Continuando con el workflow" 
+          echo "Se encontro app.js. Continuando con el workflow"
